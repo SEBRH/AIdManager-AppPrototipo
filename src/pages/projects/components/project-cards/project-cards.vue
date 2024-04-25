@@ -1,0 +1,120 @@
+<template>
+  <div class="project-cards">
+    <project-card v-for="(project, index) in projects" :key="index" :name="project.name" :image="project.image" />
+
+    <div class="add-project">
+      <Button label="+" class="addBut" @click="visible = true">
+      </Button>
+    </div>
+
+    <Dialog class="p-dialog" v-model:visible="visible">
+
+      <div style="padding:2rem">
+      <h2 class="p-dialog-title block font-semibold mb-5">Add your project</h2>
+      <span class="p-text-secondary block mb-5">Add your project info.</span>
+
+      <div class="flex align-items-center gap-3 mb-2">
+        <label for="name" class="font-semibold w-6rem">Name</label>
+          <InputText id="name" class="flex-auto" autocomplete="off" v-model="newProject.title" />
+
+      </div>
+
+      <div class="flex align-items-center gap-3 mb-2">
+        <label for="image" class="font-semibold w-6rem">Image</label>
+        <InputText id="image" class="flex-auto" autocomplete="off" v-model="newProject.image" />
+      </div>
+
+
+      <div class="flex justify-content-end gap-2">
+        <Button label="Add" @click="addProject" />
+      </div>
+  </div>
+
+    </Dialog>
+  </div>
+</template>
+
+<script setup>
+import {ref} from "vue";
+const visible = ref(false);
+
+</script>
+
+<script>
+import {ref} from "vue";
+import Button from 'primevue/button';
+import Dialog from 'primevue/dialog';
+import InputText from 'primevue/inputtext';
+import ProjectCard from '../card/card.vue'; // Importa el componente de tarjeta individual
+import FakeApiCard from "./fake-api-card.js";
+
+
+
+export default {
+  components: {
+    ProjectCard,
+    Button,
+    Dialog,
+    InputText,
+  },
+  data() {
+    return {
+      projects: [], // Arreglo para almacenar los datos de los proyectos
+      newProject: { title: '', image: '' }, // Objeto para almacenar los datos del nuevo proyecto
+    };
+  },
+  methods: {
+    fetchProjects() {
+      FakeApiCard.getProjects()
+          .then(data => {
+            this.projects = data; // Actualiza el arreglo de proyectos con los datos obtenidos de la API
+          })
+          .catch(error => {
+            console.error('Error al obtener datos de la API:', error);
+          });
+    },
+    addProject() {
+      // Validar que el título y la imagen del nuevo proyecto no estén vacíos
+      if (!this.newProject.title || !this.newProject.image) {
+        alert('Por favor, ingrese el título y la URL de la imagen para el nuevo proyecto.');
+        return;
+      }
+      // Agregar el nuevo proyecto al arreglo de proyectos
+      this.projects.push({ name: this.newProject.title, image: this.newProject.image });
+      // Limpiar los campos del formulario
+      this.newProject.title = '';
+      this.newProject.image = '';
+      visible.value = false;
+      // Cerrar el diálogo
+    }
+  },
+  mounted() {
+    this.fetchProjects(); // Llama a fetchProjects() cuando el componente se monta
+  },
+};
+</script>
+
+<style scoped>
+/* Estilos específicos para el componente ProjectCards */
+.project-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.add-project {
+  width: 20%;
+  margin: 1rem;
+}
+.addBut {
+  border-radius: 14px;
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
+  background-color: rgba(2, 81, 61, 0.4);
+  color: #02513D;
+  font-size: 600%;
+  font-weight: lighter;
+}
+
+
+</style>
