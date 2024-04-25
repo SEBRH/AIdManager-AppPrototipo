@@ -1,5 +1,11 @@
+
+
 <template>
   <section class="flex h-full flex-column p-3 lg:p-5 lg:pb-0">
+
+    <h1 class="title">Projects</h1>
+    <br>
+    <h3 class="subtitle">Current Projects</h3>
 <div>
   <div class="project-cards">
     <project-card v-for="(project, index) in projects" :key="index" :name="project.name" :image="project.image" />
@@ -112,7 +118,7 @@ export default {
 .addBut {
   border-radius: 14px;
   width: 100%;
-  height: 10rem;
+  height: 15rem;
   object-fit: cover;
   background-color: rgba(2, 81, 61, 0.4);
   color: #02513D;
@@ -120,5 +126,34 @@ export default {
   font-weight: lighter;
 }
 
+@media (max-width: 768px) {
+  .project-cards {
+    flex-direction: column-reverse;
+  }
+  .project-card{
+    width: 90%;
+  }
+  .add-project
+  {
+    width:90%
+  }
+  .p-dialog{
+    width: 90%;
+  }
+}
+
+.title{
+  font-family: 'Lora',serif;
+  font-size: 6vh;
+  color: #02513D;
+  font-weight: unset;
+}
+
+.subtitle{
+  font-family: 'Lora',serif;
+  font-size: 2vh;
+  color: #02513D;
+  font-weight: bold;
+}
 
 </style>
