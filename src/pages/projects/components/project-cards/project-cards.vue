@@ -1,4 +1,6 @@
 <template>
+  <section class="flex h-full flex-column p-3 lg:p-5 lg:pb-0">
+<div>
   <div class="project-cards">
     <project-card v-for="(project, index) in projects" :key="index" :name="project.name" :image="project.image" />
 
@@ -32,6 +34,8 @@
 
     </Dialog>
   </div>
+</div>
+  </section>
 </template>
 
 <script setup>
