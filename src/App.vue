@@ -4,10 +4,16 @@ import ToolbarContent from "@/public/toolbar-content.component.vue";
 import SidebarContent from "@/public/sidebar-content-component.vue";
 import HomeContent from "@/pages/home/components/home-content.component.vue";
 import CalendarContent from "@/pages/calendar/calendar-content.component.vue";
+import card from "@/pages/projects/components/card/card.component.vue";
+import ProjectCards from "@/pages/projects/components/project-cards/project-cards.component.vue";
+import Todo from "@/pages/project-to-do/components/project-to-do/todo.component.vue"
+import Column from "@/pages/project-to-do/components/columns/column.component.vue";
+import Task from "@/pages/project-to-do/components/columns/task/task.component.vue";
+import 'primeicons/primeicons.css'
 
 export default {
   name: 'App',
-  components: {CalendarContent, HomeContent, ToolbarContent, SidebarContent},
+  components: {ProjectCards, card, CalendarContent, HomeContent, ToolbarContent, SidebarContent, Todo, Column, Task},
   data() {
     return {
       sidebarVisible: true,
@@ -40,7 +46,7 @@ export default {
     <sidebar-content :sidebarVisible="sidebarVisible" class="sidebar-content"></sidebar-content>
     <main class="main-content">
       <!--aca hacen su jiji solo reemplaceen por el componente (vista) que van a trabajar-->
-      <home-content></home-content>
+      <Todo></Todo>
     </main>
   </div>
 </template>
