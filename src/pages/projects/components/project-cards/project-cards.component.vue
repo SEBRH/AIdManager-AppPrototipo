@@ -130,9 +130,6 @@ export default {
   .project-cards {
     flex-direction: column-reverse;
   }
-  .project-card{
-    width: 90%;
-  }
   .add-project
   {
     width:90%

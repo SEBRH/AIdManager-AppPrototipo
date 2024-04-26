@@ -53,10 +53,6 @@ export default {
 
 <style>
 
-/*para testing no borrar, estos estilos son gloables*/
-.border {
-  border: 1px solid blue;
-}
 
 .app-container {
   display: grid;

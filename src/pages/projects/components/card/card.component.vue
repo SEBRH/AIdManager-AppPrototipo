@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import { ref } from 'vue';
 import Button from 'primevue/button';
 
 export default {

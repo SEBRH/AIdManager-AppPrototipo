@@ -129,9 +129,9 @@ const items = ref([{
   flex-direction: row;
   justify-content: space-between;
 }
-p.p-button-icon tier{
-  padding:20rem 0;
-  margin:100px
+.p-button-icon{
+  padding:1rem 0;
+  margin: 1rem;
 }
 
 </style>
