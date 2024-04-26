@@ -34,7 +34,7 @@
 
 
       <div class="flex justify-content-end gap-2">
-        <Button label="Add" @click="addProject" />
+        <Button label="Add" @click="addProject" style="background-color: #02513D " />
       </div>
   </div>
 
@@ -55,7 +55,7 @@ import {ref} from "vue";
 import Button from 'primevue/button';
 import Dialog from 'primevue/dialog';
 import InputText from 'primevue/inputtext';
-import ProjectCard from '../card/card.vue'; // Importa el componente de tarjeta individual
+import ProjectCard from '../card/card.component.vue'; // Importa el componente de tarjeta individual
 import FakeApiCard from "./fake-api-card.js";
 
 
@@ -118,7 +118,7 @@ export default {
 .addBut {
   border-radius: 14px;
   width: 100%;
-  height: 15rem;
+  height: 12rem;
   object-fit: cover;
   background-color: rgba(2, 81, 61, 0.4);
   color: #02513D;

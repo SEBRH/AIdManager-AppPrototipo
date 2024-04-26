@@ -57,7 +57,7 @@ export default {
 
   .project-card img {
     width: 100%; /* O el ancho que desees */
-    height: 15rem; /* O la altura que desees */
+    height: 12rem; /* O la altura que desees */
     object-fit: cover; /* Ajusta la imagen dentro de la caja sin distorsionarla */
   }
 
