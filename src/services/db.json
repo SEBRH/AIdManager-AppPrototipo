@@ -1,0 +1,16 @@
+{
+  "projects": [
+    { "id": 1, "name": "Proyecto 1", "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRlwAa3FhsapzrIDW2IyMtMjR0VTgOmKkEXw6_N60MahSJE_N9Y" },
+    { "id": 2, "name": "Proyecto 2", "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQknE-houeICeNsQ6LegXqMnxLQSClpIP4Bthv2NQEjlV2gzfek" },
+    { "id": 3, "name": "Proyecto 3", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhyudHd35INCkB7jF_aXq6aeSjZdhs5QU5AZrKLkqRFuiMhGEz" }
+  ],
+  "comments": [
+    { "id": "1", "text": "a comment about post 1", "postId": "1" },
+    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
+
+

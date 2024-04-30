@@ -56,11 +56,13 @@ import Button from 'primevue/button';
 import Dialog from 'primevue/dialog';
 import InputText from 'primevue/inputtext';
 import ProjectCard from '../card/card.component.vue'; // Importa el componente de tarjeta individual
-import FakeApiCard from "./fake-api-card.js";
 
 
 
 export default {
+
+
+
   components: {
     ProjectCard,
     Button,
@@ -75,10 +77,9 @@ export default {
   },
   methods: {
     fetchProjects() {
-      FakeApiCard.getProjects()
-          .then(data => {
-            this.projects = data; // Actualiza el arreglo de proyectos con los datos obtenidos de la API
-          })
+      fetch("http://localhost:3000/projects")
+          .then(response => response.json())
+          .then( data => this.projects = data)
           .catch(error => {
             console.error('Error al obtener datos de la API:', error);
           });

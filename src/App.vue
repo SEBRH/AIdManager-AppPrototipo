@@ -46,7 +46,7 @@ export default {
     <sidebar-content :sidebarVisible="sidebarVisible" class="sidebar-content"></sidebar-content>
     <main class="main-content">
       <!--aca hacen su jiji solo reemplaceen por el componente (vista) que van a trabajar-->
-      <Todo></Todo>
+      <project-cards></project-cards>
     </main>
   </div>
 </template>
